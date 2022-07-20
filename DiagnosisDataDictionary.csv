@@ -1,0 +1,24 @@
+﻿Label,Description,Text Format
+Consultant Appointment,The number of days elapsed between the date GP referral and the date of 1st consultation allotted to the patient.,1 = YES   0 = NO
+MRI,The number of days elapsed between date of Consultant Appointment and  the date of MRI scan reported.,1 = YES   0 = NO
+Biopsy booked,The number of days elapsed between date of MRI report and biopsy procedure booked date.,1 = YES   0 = NO
+Biopsy Procedure,The number of days elapsed between biopsy procedure booked date and Biopsy report date,1 = YES   0 = NO
+Biopsy Review,The number of days elapsed between Biopsy report date and Consultation date after biopsy,1 = YES   0 = NO
+(Public) Average time,"According to the data published by IPCOR, the average days elapsed between date of GP referral to date of biopsy report in Irish public hospitals. (79 days)",1 = YES   0 = NO
+(Private) Average time,"According to the data published by IPCOR, the average days elapsed between date of GP referral to date of biopsy report in Irish private hospitals. (59 Days)",1 = YES   0 = NO
+Patient Id,Each patient is represented with unique identification number.,1 = YES   0 = NO
+MRI,"Average days elapsed between the date of Consultation Appointment and date of MRI scan reported, during  (Affected By Covid) timespan.",1 = YES   0 = NO
+Biopsy Procedure,"The Average days elapsed between the date of biopsy booked date and  date of biopsy result reported, during (Affected By Covid) timespan.",1 = YES   0 = NO
+Consultant Appointment,"The average days elapsed between the date of GP referral and the date of 1st consultation allotted to the patient, during (Affected By Covid) timespan.",1 = YES   0 = NO
+Annual Averages chart,Annual average time for diagnosis of prostate cancer.,1 = YES   0 = NO
+Year of initial referral ,Year of GP referral letter to the consultant for further diagnostic evaluation of prostate cancer.,1 = YES   0 = NO
+Affected by Covid,"A patient is deemed to have been affected by COVID, 
+If they were referred after (March 1st 2020) AND their biopsy review took place before (July 1st 2020),
+If they were referred before (March 1st 2020) AND their biopsy review took place after (July 1st 2020),
+If they were referred between (March 1st 2020) and (July 1st 2020),
+If their biopsy review took place between (March 1st 2020) and (July 1st 2020).",1 = YES   0 = NO
+Covid Filter,"A patient is deemed to have been affected by COVID,
+If they were referred after (March 1st 2020) AND their biopsy review took place before (July 1st 2020)
+If they were referred before (March 1st 2020) AND their biopsy review took place after (July 1st 2020)
+If they were referred between (March 1st 2020) and (July 1st 2020)
+If their biopsy review took place between (March 1st 2020) and (July 1st 2020).",1 = YES   0 = NO
