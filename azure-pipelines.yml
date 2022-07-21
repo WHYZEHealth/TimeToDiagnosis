@@ -30,3 +30,4 @@ extends:
   template: Pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
   parameters:
     GroupVariablesName: $[format('TimeTodiagnosis_{0}', variables['branchName'])]
+
