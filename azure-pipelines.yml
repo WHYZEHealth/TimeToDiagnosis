@@ -29,21 +29,21 @@ stages:
 
   - job: PickVariableGroup
   - ${{ if eq(variables['Build.SourceBranch'], 'refs/tags/dev') }}: 
-    - template: pipelines/TimeToDiagnosisDataTeam.yml@Devops
+    - template: pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
       parameters:
         GroupVariablesName: TimeToDiagnosisDevDataTeam
 
   - ${{ if eq(variables['Build.SourceBranch'], 'refs/tags/staging') }}: 
-    - template: pipelines/TimeToDiagnosisDataTeam.yml@Devops
+    - template: pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
       parameters:
         GroupVariablesName: TimeToDiagnosisStagingDataTeam
 
   - ${{ if eq(variables['Build.SourceBranch'], 'refs/tags/uat') }}: 
-    - template: pipelines/TimeToDiagnosisDataTeam.yml@Devops
+    - template: pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
       parameters:
         GroupVariablesName: TimeToDiagnosisUatDataTeam
 
   - ${{ if eq(variables['Build.SourceBranch'], 'refs/tags/main') }}: 
-    - template: pipelines/TimeToDiagnosisDataTeam.yml@Devops
+    - template: pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
       parameters:
         GroupVariablesName: TimeToDiagnosisMainDataTeam
