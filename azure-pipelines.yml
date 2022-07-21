@@ -27,6 +27,6 @@ variables:
     branchName: $[ replace(variables['System.PullRequest.TargetBranch'], 'refs/heads/', '') ]
 
 extends:
-  template: pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
+  template: Pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
   parameters:
     GroupVariablesName: $[format('TimeTodiagnosis_{0}', variables['branchName'])]
