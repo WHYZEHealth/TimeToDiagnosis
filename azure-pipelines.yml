@@ -12,6 +12,11 @@ resources:
       ref: refs/heads/dev
     - repository: self
 
+extends:
+  template: Pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
+  parameters:
+    GroupVariablesName: $[format('TimeTodiagnosis_{0}', variables['branchName'])]
+
 pool:
   vmImageName: 'ubuntu-latest'
 
@@ -26,8 +31,5 @@ variables:
   ${{ if startsWith(variables['Build.SourceBranch'], 'refs/pull/') }}:
     branchName: $[ replace(variables['System.PullRequest.TargetBranch'], 'refs/heads/', '') ]
 
-extends:
-  template: Pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
-  parameters:
-    GroupVariablesName: $[format('TimeTodiagnosis_{0}', variables['branchName'])]
+
 
