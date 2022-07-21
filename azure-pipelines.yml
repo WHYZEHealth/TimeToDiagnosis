@@ -22,28 +22,23 @@ variables:
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
-stages:
-- stage: Build
-  displayName: Build and push stage
-  jobs:
-
-  - job: PickVariableGroup
+extends:
   - ${{ if eq(variables['Build.SourceBranch'], 'refs/tags/dev') }}: 
-    - template: pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
-      parameters:
-        GroupVariablesName: TimeToDiagnosisDevDataTeam
+    template: pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
+    parameters:
+      GroupVariablesName: TimeToDiagnosisDevDataTeam
 
   - ${{ if eq(variables['Build.SourceBranch'], 'refs/tags/staging') }}: 
-    - template: pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
-      parameters:
-        GroupVariablesName: TimeToDiagnosisStagingDataTeam
+    template: pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
+    parameters:
+      GroupVariablesName: TimeToDiagnosisStagingDataTeam
 
   - ${{ if eq(variables['Build.SourceBranch'], 'refs/tags/uat') }}: 
-    - template: pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
-      parameters:
-        GroupVariablesName: TimeToDiagnosisUatDataTeam
+    template: pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
+    parameters:
+      GroupVariablesName: TimeToDiagnosisUatDataTeam
 
   - ${{ if eq(variables['Build.SourceBranch'], 'refs/tags/main') }}: 
-    - template: pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
-      parameters:
-        GroupVariablesName: TimeToDiagnosisMainDataTeam
+    template: pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
+    parameters:
+      GroupVariablesName: TimeToDiagnosisMainDataTeam
