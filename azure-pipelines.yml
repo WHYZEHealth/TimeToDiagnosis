@@ -23,22 +23,22 @@ variables:
   vmImageName: 'ubuntu-latest'
 
 extends:
-  - ${{ if eq(variables['Build.SourceBranch'], 'refs/tags/dev') }}: 
+  ${{ if eq(variables['Build.SourceBranch'], 'refs/tags/dev') }}: 
     template: pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
     parameters:
       GroupVariablesName: TimeToDiagnosisDevDataTeam
 
-  - ${{ if eq(variables['Build.SourceBranch'], 'refs/tags/staging') }}: 
+  ${{ if eq(variables['Build.SourceBranch'], 'refs/tags/staging') }}: 
     template: pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
     parameters:
       GroupVariablesName: TimeToDiagnosisStagingDataTeam
 
-  - ${{ if eq(variables['Build.SourceBranch'], 'refs/tags/uat') }}: 
+  ${{ if eq(variables['Build.SourceBranch'], 'refs/tags/uat') }}: 
     template: pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
     parameters:
       GroupVariablesName: TimeToDiagnosisUatDataTeam
 
-  - ${{ if eq(variables['Build.SourceBranch'], 'refs/tags/main') }}: 
+  ${{ if eq(variables['Build.SourceBranch'], 'refs/tags/main') }}: 
     template: pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
     parameters:
       GroupVariablesName: TimeToDiagnosisMainDataTeam
