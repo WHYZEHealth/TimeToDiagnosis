@@ -25,7 +25,7 @@ variables:
     branchName: $[ replace(variables['Build.SourceBranch'], 'refs/heads/', '') ]
   ${{ if startsWith(variables['Build.SourceBranch'], 'refs/pull/') }}:
     branchName: $[ replace(variables['System.PullRequest.TargetBranch'], 'refs/heads/', '') ]
-  branch: '${{ parameters.Build.SourceBranchName }}'
+  branch: '${{ variables.Build.SourceBranch }}'
 
 extends:
   template: Pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
