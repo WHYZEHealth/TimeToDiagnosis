@@ -29,6 +29,6 @@ variables:
 extends:
   template: Pipelines/TimeToDiagnosisDataTeam.yml@DevopsDataTeam
   parameters:
-    GroupVariablesName: ${{ format('$(TimeTodiagnosis_{0})', variables['BRANCHNAME']) }}
+    GroupVariablesName: ${{ format('TimeTodiagnosis_{0}', replace(variables['System.PullRequest.TargetBranch'], 'refs/heads/', '')) }}
 
 
