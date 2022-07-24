@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y unixodbc-dev
 
 RUN pip install -r requirements.txt
 
-EXPOSE 7013
+EXPOSE 80
 
 ENTRYPOINT [ "python" ]
 
