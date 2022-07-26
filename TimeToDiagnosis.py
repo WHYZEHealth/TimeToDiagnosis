@@ -22,24 +22,27 @@ database = config.get('Medications', 'database')
 
 DataDictionaryRawData = pd.read_csv("DiagnosisDataDictionary.csv")
 
-# Create the connection String.
-connection_string = textwrap.dedent('''
-    Driver={driver};
-    Server={server};
-    Port = 1433;
-    Database={database};
-    Uid={username};
-    Pwd={password};
-    Encrypt=yes;
-    TrustServerCertificate=no;
-    Connection Timeout=30;
-'''.format(
-    driver=driver,
-    username=username,
-    password=password,
-    database=database,
-    server=server
-)).replace("'", "")
+connection_string = config.get('Medications', 'connection_string').replace("'", "")
+
+if connection_string == '':
+    connection_string = textwrap.dedent('''
+        Driver={driver};
+        Server={server};
+        Port = 1433;
+        Database={database};
+        Uid={username};
+        Pwd={password};
+        Encrypt=yes;
+        TrustServerCertificate=no;
+        Connection Timeout=30;
+    '''.format(
+        driver=driver,
+        username=username,
+        password=password,
+        database=database,
+        server=server
+    )).replace("'", "")
+
 
 #Create a new connection
 
@@ -148,7 +151,7 @@ class TimeToDiagnosis:
 
 
 class TimeToDiagnosisCharts:
-    def restructure():
+    def restructure(self):
         covid = data_df[data_df['AffectedByCovid'] == 'Yes']
         not_covid = data_df[data_df['AffectedByCovid'] == 'No']
         all_average_time_to_diagnosis = round(data_df['total_days'].mean(), 2)
