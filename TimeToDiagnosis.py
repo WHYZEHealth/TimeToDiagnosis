@@ -151,7 +151,7 @@ class TimeToDiagnosis:
 
 
 class TimeToDiagnosisCharts:
-    def restructure(self):
+    def restructure():
         covid = data_df[data_df['AffectedByCovid'] == 'Yes']
         not_covid = data_df[data_df['AffectedByCovid'] == 'No']
         all_average_time_to_diagnosis = round(data_df['total_days'].mean(), 2)
