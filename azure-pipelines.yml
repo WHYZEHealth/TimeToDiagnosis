@@ -16,7 +16,7 @@ pool:
   vmImageName: 'ubuntu-latest'
 
 variables:
-  dockerRegistryServiceConnection: '992d685f-fd16-4ac1-9fdf-fb6fdb6fbf23'
+  dockerRegistryServiceConnection: 'WhyzeContainerRegistry'
   imageRepository: 'timetodiagnosis'
   containerRegistry: 'whyze.azurecr.io'
   dockerfilePath: '$(Build.SourcesDirectory)/Dockerfile'
